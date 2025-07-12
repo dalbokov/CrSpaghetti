@@ -177,8 +177,9 @@ const Chart = {
                 return await CoinGeckoAPI.getTopCoins(limit);
                 
             case 'category':
-                const category = document.getElementById('category').value;
-                return await CoinGeckoAPI.getCoinsByCategory(category, limit);
+    	        const categoryValue = document.getElementById('category').value;
+    	        const mappedCategory = AppState.categoryMap[categoryValue] || categoryValue;
+    	        return await CoinGeckoAPI.getCoinsByCategory(mappedCategory, limit);
                 
             case 'custom':
                 return AppState.customCoins.slice(0, limit);
