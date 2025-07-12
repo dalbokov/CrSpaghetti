@@ -91,7 +91,7 @@ async function initializeApp() {
     // Initialize all modules in correct order
     Controls.init();
     ActionButtons.init();
-    await CoinPickerModal.init();
+    await CustomPicker.init();
     Chart.init();
 }
 
