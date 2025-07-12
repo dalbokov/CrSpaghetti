@@ -90,7 +90,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 async function initializeApp() {
     // Initialize all modules in correct order
     Controls.init();
-    ThemeToggle.init();
     ActionButtons.init();
     await CoinPickerModal.init();
     Chart.init();
@@ -111,16 +110,6 @@ function removeMockupNote() {
 // ============================
 // THEME TOGGLE
 // ============================
-
-const ThemeToggle = {
-    init() {
-        const toggle = document.querySelector('.theme-toggle');
-        toggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark-theme');
-            toggle.textContent = document.body.classList.contains('dark-theme') ? '☀️' : '🌙';
-        });
-    }
-};
 
 // ============================
 // ACTION BUTTONS
